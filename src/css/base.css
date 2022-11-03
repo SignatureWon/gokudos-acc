@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Source+Sans+Pro:wght@400;600;700&display=swap');
+
+body {
+  --primary-1: 255,214,220;
+  --primary-2: 255,163,175;
+  --primary-3: 255,112,131;
+  --primary-4: 255,61,87;
+  --primary-5: 255,10,42;
+  --primary-6: 214,0,28;
+  --primary-7: 178,0,23;
+  --primary-8: 143,0,19;
+  --primary-9: 107,0,14;
+  /* --neutral-1: 243, 244, 246;
+  --neutral-2: 229, 231, 235;
+  --neutral-3: 209, 213, 219;
+  --neutral-4: 156, 163, 175;
+  --neutral-5: 107, 114, 128;
+  --neutral-6: 75, 85, 99;
+  --neutral-7: 55, 65, 81;
+  --neutral-8: 31, 41, 55;
+  --neutral-9: 17, 24, 39; */
+  font-family: 'Source Sans Pro', sans-serif;
+  @apply bg-gray-200 pb-14
+}
+h1, h2, h3, h4 {
+  font-family: 'Poppins', sans-serif;
+}
+h1 {
+  padding: 0 1rem;
+  font-size: 1.5rem!important;
+}
+h2 {
+  padding: 1rem 0 0.5rem;
+  font-size: 1rem!important;
+}
+.font-heading {
+  font-family: 'Poppins', sans-serif;
+}
+.font-body {
+  font-family: 'Source Sans Pro', sans-serif;  
+}
+
+::-webkit-scrollbar {
+  @apply w-4
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded-full border-4 border-solid border-transparent bg-clip-content
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-600
+}

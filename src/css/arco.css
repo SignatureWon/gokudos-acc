@@ -1,0 +1,29 @@
+.nav .arco-menu-inner {
+  @apply px-1;
+}
+.arco-table-size-small .arco-table-td,
+.arco-table-size-small .arco-table-th-item {
+  @apply p-2;
+}
+
+.arco-modal-header .arco-modal-title {
+  @apply text-left font-heading;
+}
+
+.arco-input-inner-wrapper.large input {
+  @apply text-xl;
+}
+
+.arco-btn-outline:not(.arco-btn-disabled) {
+  @apply border-gray-400 text-gray-900
+}
+.arco-avatar-group > span:empty:first-child {
+  width: 6px;
+  display: inline-block;
+}
+.arco-modal-wrapper.full .arco-modal-content {
+  @apply p-0;
+}
+/* .arco-modal-wrapper.full .arco-modal {
+  max-height: 60vh;
+} */
