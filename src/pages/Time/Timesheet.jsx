@@ -40,6 +40,7 @@ const Page = () => {
       width: 200,
     },
   ];
+  let summary = []
   for (let i = 1; i <= selected.daysInMonth(); i++) {
     let d = new Date(selected.year(), selected.month(), i);
     let day = dayjs(d);
@@ -48,13 +49,63 @@ const Page = () => {
       dataIndex: i,
       width: 100,
       render: (col, record, index) => {
-        const [value, setValue] = useState(col || 0)
-        return <InputNumber min={0} max={24} step={0.5} precision={0} defaultValue={value} value={value} className={value > 0 ? "[&>span>.arco-input-inner-wrapper]:bg-green-100 border border-green-500" : ""} onChange={(e) => {
-          setValue(e);
-        }} />;
+        const [value, setValue] = useState(col || 0);
+        return (
+          <InputNumber
+            min={0}
+            max={24}
+            step={0.5}
+            precision={0}
+            defaultValue={value}
+            value={value}
+            className={
+              value > 0
+                ? "[&>span>.arco-input-inner-wrapper]:bg-green-100 border border-green-500"
+                : ""
+            }
+            onChange={(e) => {
+              setValue(e);
+            }}
+          />
+        );
       },
     });
+    summary.push(<Table.Summary.Cell>
+      <InputNumber
+        readOnly
+        step={0.5}
+        precision={0}
+        value={0}
+      />
+    </Table.Summary.Cell>)
   }
+  columns.push({
+    title: "Total",
+    dataIndex: "total",
+    width: 100,
+    render: (col, record, index) => {
+      const [value, setValue] = useState(col || 0);
+      return (
+        <InputNumber
+          readOnly
+          min={0}
+          max={24}
+          step={0.5}
+          precision={0}
+          defaultValue={value}
+          value={value}
+          className={
+            value > 0
+              ? "[&>span>.arco-input-inner-wrapper]:bg-green-100 border border-green-500"
+              : ""
+          }
+          onChange={(e) => {
+            setValue(e);
+          }}
+        />
+      );
+    },
+  });
 
   return (
     <>
@@ -71,6 +122,22 @@ const Page = () => {
               scroll={{
                 x: true,
               }}
+              summary={(currentData) => (
+                <Table.Summary>
+                  <Table.Summary.Row>
+                    <Table.Summary.Cell />
+                    {summary}
+                    <Table.Summary.Cell>
+                      <InputNumber
+                        readOnly
+                        step={0.5}
+                        precision={0}
+                        value={0}
+                      />
+                    </Table.Summary.Cell>
+                  </Table.Summary.Row>
+                </Table.Summary>
+              )}
             />
           </div>
         ))}

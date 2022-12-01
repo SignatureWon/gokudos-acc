@@ -8,38 +8,33 @@ import WorkspaceAdd from "./WorkspaceAdd";
 const workspaces = {
   selected: {
     id: 1,
-    name: "Audit 2022",
+    name: "Sales",
     avatar: "",
   },
   list: [
     {
       id: 1,
-      name: "Audit 2022",
+      name: "Sales",
       avatar: "",
     },
     {
       id: 2,
-      name: "Audit 2021",
+      name: "Marketing",
       avatar: "",
     },
     {
       id: 3,
-      name: "Audit 2020",
+      name: "Finance",
       avatar: "",
     },
     {
       id: 4,
-      name: "Audit 2019",
+      name: "HR",
       avatar: "",
     },
     {
       id: 5,
-      name: "Audit 2018",
-      avatar: "",
-    },
-    {
-      id: 6,
-      name: "Audit 2017",
+      name: "Management",
       avatar: "",
     },
   ],

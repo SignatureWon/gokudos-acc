@@ -112,10 +112,9 @@ const SubnavProject = () => {
               style={{ padding: 0 }}
             >
               <div className="flex items-center bg-gray-100 hover:bg-gray-200">
-                <Link to="/tasks" key={project.id} className="flex-1">
-                  <div>
-                    <IconFolder className="w-4 h-4 ml-2" /> {project.name}
-                  </div>
+                <Link to="/tasks" key={project.id} className="flex-1 flex items-center truncate">
+                  <IconFolder className="w-4 h-4 ml-2" />
+                  <div className="truncate flex-1">{project.name}</div>
                 </Link>
                 <Dropdown droplist={menuProject} trigger="click">
                   <div className="-mr-4 px-1">

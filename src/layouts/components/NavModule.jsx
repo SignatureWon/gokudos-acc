@@ -26,7 +26,7 @@ const NavModule = (props) => {
           <IconUser className="w-4 h-4 mx-1" /> Contacts
         </Menu.Item>
       </Link>
-      <Link to="/attendance">
+      <Link to="/time">
         <Menu.Item key="attendance" className="text-base">
           <IconClockCircle className="w-4 h-4 mx-1" /> Attendance
         </Menu.Item>

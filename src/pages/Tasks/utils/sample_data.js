@@ -26,11 +26,11 @@ export const members = [
 const groups = [
   {
     id: faker.datatype.uuid(),
-    name: "Interim Audit",
+    name: "Active Deals",
   },
   {
     id: faker.datatype.uuid(),
-    name: "Final Audit",
+    name: "Closed",
   },
 ];
 const singleProject = (name, groups) => {
@@ -111,7 +111,7 @@ const singleTask = (
     watchers: [],
     contacts: [],
     value: value,
-    actualValue: value + actualvalue,
+    actualValue: actualvalue,
     description: "",
     effort: null,
     tags: [],
@@ -130,24 +130,30 @@ export const tasksData = {
   members,
   groups,
   projects: [
-    singleProject("TCH Sdn Bhd", [
-      singleGroup("Interim Audit", [
-        singleTask("Financial Statement", 0, 0, TASK.STATUS[0], "TCH Sdn Bhd", groups[0], 2, 0, 0, 100, []),
-        singleTask("Completion Procedures", 5, 15, TASK.STATUS[1], "TCH Sdn Bhd", groups[0], 0, 3, 500, -100, []),
-        singleTask("Planning", 8, 8, TASK.STATUS[2], "TCH Sdn Bhd", groups[0], 0, 0, 1000, 100, []),
-        singleTask("Audit Procedures/Execution", 10, 10, TASK.STATUS[3], "TCH Sdn Bhd", groups[0], 2, 2, 0, 100, [
-          singleTask("Audit Procedures", 10, 5, TASK.STATUS[2], "TCH Sdn Bhd", "Interim Audit", 0, 0, 0, 100, []),
-          singleTask("Execution", 12, 8, TASK.STATUS[3], "TCH Sdn Bhd", "Interim Audit", 0, 0, 750, 100, []),
+    singleProject("Sales December 2022", [
+      singleGroup("Active Deals", [
+        singleTask("Unicorn Corporation", 0, 20, TASK.STATUS[0], "Sales December 2022", groups[0], 2, 0, 1200, 0, [
+          singleTask("Send initial email", 0, 5, TASK.STATUS[0], "Sales December 2022", groups[0], 0, 0, 0, 100, []),
+          singleTask("Send follow up email", 1, 8, TASK.STATUS[0], "Sales December 2022", groups[0], 0, 0, 750, 100, []),
+          singleTask("Schedule initial sales call", 3, 10, TASK.STATUS[0], "Sales December 2022", groups[0], 0, 0, 0, 100, []),
+          singleTask("Schedule follow-up sales call (if necessary)", 6, 12, TASK.STATUS[0], "Sales December 2022", groups[0], 0, 0, 750, 100, []),
+          singleTask("Schedule appointment", 9, 15, TASK.STATUS[0], "Sales December 2022", groups[0], 0, 0, 0, 100, []),
+          singleTask("Follow up after appointment", 10, 11, TASK.STATUS[0], "Sales December 2022", groups[0], 0, 0, 750, 100, []),
+          singleTask("Send proposal / quotation", 12, 15, TASK.STATUS[0], "Sales December 2022", groups[0], 0, 0, 0, 100, []),
+          singleTask("Finalize contract", 15, 18, TASK.STATUS[0], "Sales December 2022", groups[0], 0, 0, 750, 100, []),
+          singleTask("Hand off to customer success", 18, 20, TASK.STATUS[0], "Sales December 2022", groups[0], 0, 0, 0, 100, []),
+          singleTask("Post-sales follow up", 19, 20, TASK.STATUS[0], "Sales December 2022", groups[0], 0, 0, 750, 100, []),
+        ]),
+        singleTask("TCH Sdn Bhd", 5, 15, TASK.STATUS[0], "Sales December 2022", groups[0], 0, 3, 2300, 0, []),
+        singleTask("Nature Freight", 8, 8, TASK.STATUS[1], "Sales December 2022", groups[0], 0, 0, 1500, 0, []),
+        singleTask("Kuda Sdn Bhd", 10, 10, TASK.STATUS[1], "Sales December 2022", groups[0], 2, 2, 3100, 0, [
         ]),
       ]),
-      singleGroup("Final Audit", [
-        singleTask("Financial Statement", 15, 10, TASK.STATUS[0], "TCH Sdn Bhd", groups[1], 0, 0, 0, 100, []),
-        singleTask("Completion Procedures", 20, 15, TASK.STATUS[1], "TCH Sdn Bhd", groups[1], 1, 0, 1500, -100, []),
-        singleTask("Planning", 25, 8, TASK.STATUS[2], "TCH Sdn Bhd", groups[1], 2, 3, 300, 100, []),
-        singleTask("Audit Procedures/Execution",30, 10, TASK.STATUS[3], "TCH Sdn Bhd", groups[1], 0, 2, 0, 100, [
-          singleTask("Audit Procedures",30, 5, TASK.STATUS[0], "TCH Sdn Bhd", groups[1], 0, 0, 1000, 100, []),
-          singleTask("Execution",32, 8, TASK.STATUS[1], "TCH Sdn Bhd", groups[1], 0, 0, 100, 100, []),
-        ]),
+      singleGroup("Closed", [
+        singleTask("Driversity Global", 15, 10, TASK.STATUS[2], "Sales December 2022", groups[1], 0, 0, 2750, 2500, []),
+        singleTask("Floral Corporation", 20, 15, TASK.STATUS[2], "Sales December 2022", groups[1], 1, 0, 1300, 1100, []),
+        singleTask("Exeliq Globiz", 25, 8, TASK.STATUS[2], "Sales December 2022", groups[1], 2, 3, 500, 0, []),
+        singleTask("Sportify Academy",30, 10, TASK.STATUS[3], "Sales December 2022", groups[1], 0, 2, 1200, 0, []),
       ]),
     ]),
     // singleProject("B Project", [
@@ -167,8 +173,12 @@ export const tasksData = {
   ],
 };
 export const projectsData = [
-  singleProject("TCH Sdn Bhd", []),
-  singleProject("Nature Freight", []),
+  singleProject("Sales December 2022", []),
+  singleProject("Sales November 2022", []),
+  singleProject("Sales October 2022", []),
+  singleProject("Sales September 2022", []),
+  singleProject("Sales August 2022", []),
+  singleProject("Sales July 2022", []),
 ];
 
 export const subtasksData = [

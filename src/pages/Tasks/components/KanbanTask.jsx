@@ -8,6 +8,13 @@ import { useState } from "react";
 const KanbanTask = (props) => {
   const [modalTaskEdit, setModalTaskEdit] = useState(false);
   const task = props.task;
+  function numberWithCommas(num) {
+    num = Number(num);
+    return num
+      .toFixed(2)
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
 
   console.log(task);
   return (
@@ -65,11 +72,11 @@ const KanbanTask = (props) => {
               {task.value > 0 && (
                 <div className="grid grid-cols-2 rounded">
                   <div className="py-0.5 px-2 bg-gray-50">
-                    <div className="text-sm">RM{task.value}</div>
+                    <div className="text-sm">RM{numberWithCommas(task.value)}</div>
                     <div className="text-xs text-gray-500">Budget</div>
                   </div>
                   <div className={`py-0.5 px-2 border-l ${(task.value > task.actualValue) ? "bg-green-50 text-green-600 border-green-500" : "bg-red-50 text-red-600 border-red-600"}`}>
-                    <div className="text-sm">RM{task.actualValue}</div>
+                    <div className="text-sm">RM{numberWithCommas(task.actualValue)}</div>
                     <div className="text-xs text-gray-500">Actual</div>
                   </div>
                 </div>
