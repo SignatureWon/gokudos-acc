@@ -5,12 +5,14 @@ import {
   Dropdown,
   Menu,
   Tabs,
+  Badge,
 } from "@arco-design/web-react";
 import { useState } from "react";
 import {
   IconShareAlt,
   IconMoreVertical,
   IconHistory,
+  IconStarFill,
 } from "@arco-design/web-react/icon";
 import TaskChecklist from "./TaskChecklist";
 import TaskAttachment from "./TaskAttachment";
@@ -214,7 +216,17 @@ const TaskEdit = (props) => {
               </div>
             </div>
             <div className="px-2 py-3 flex">
-              <div className="flex-1">Tracking</div>
+              <div className="flex-1">
+                Tracking
+                {/* <Badge
+                  count={
+                    <IconStarFill style={{ fontSize: 12, color: "#D6001C" }} />
+                  }
+                  offset={[15, -1]}
+                >
+                  Tracking
+                </Badge> */}
+              </div>
               <div className="w-40">
                 <InputTracking data={{}} />
               </div>
@@ -228,13 +240,13 @@ const TaskEdit = (props) => {
             <div className="px-2 py-3 flex">
               <div className="flex-1">Budget value</div>
               <div className="w-40">
-                <InputText data={null} prefix="RM " placeholder="RM" />
+                <InputText data={500} prefix="RM " placeholder="RM" />
               </div>
             </div>
             <div className="px-2 py-3 flex">
               <div className="flex-1">Budget hours</div>
               <div className="w-40">
-                <InputText data={null} suffix=" hours" placeholder="Hours" />
+                <InputText data={3} suffix=" hours" placeholder="Hours" />
               </div>
             </div>
             <div className="px-2 py-3 flex">
