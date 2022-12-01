@@ -7,29 +7,45 @@ const Page = () => {
   const projects = [
     {
       id: 1,
-      name: "A Project",
+      name: "Sales December 2022",
     },
-    {
-      id: 2,
-      name: "B Project",
-    },
+    // {
+    //   id: 2,
+    //   name: "B Project",
+    // },
   ];
   const tasks = [
     {
       id: 1,
-      name: "A Task",
+      name: "Unicorn Corporation",
     },
     {
       id: 2,
-      name: "B Task",
+      name: "TCH Sdn Bhd",
     },
     {
       id: 3,
-      name: "C Task",
+      name: "Nature Freight",
     },
     {
       id: 4,
-      name: "D Task",
+      name: "Kuda Sdn Bhd",
+    },
+    {
+      id: 5,
+      name: "Driversity Global",
+    },
+    {
+      id: 6,
+      name: "Floral Corporation",
+    },
+    {
+      id: 7,
+      name: "Exeliq Globiz",
+    },
+    {
+      id: 8,
+      name: "Sportify Academy",
     },
   ];
   let columns = [

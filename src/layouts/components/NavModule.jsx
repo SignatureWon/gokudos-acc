@@ -27,10 +27,15 @@ const NavModule = (props) => {
         </Menu.Item>
       </Link>
       <Link to="/time">
-        <Menu.Item key="attendance" className="text-base">
-          <IconClockCircle className="w-4 h-4 mx-1" /> Attendance
+        <Menu.Item key="time" className="text-base">
+          <IconClockCircle className="w-4 h-4 mx-1" /> Time
         </Menu.Item>
       </Link>
+      {/* <Link to="/billing">
+        <Menu.Item key="billing" className="text-base">
+          <IconClockCircle className="w-4 h-4 mx-1" /> Billing
+        </Menu.Item>
+      </Link> */}
       <Link to="/reports">
         <Menu.Item key="reports" className="text-base">
           <IconSort className="w-4 h-4 mx-1" /> Reports
