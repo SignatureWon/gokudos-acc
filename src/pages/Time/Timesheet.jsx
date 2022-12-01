@@ -33,7 +33,7 @@ const Page = () => {
     },
     {
       id: 5,
-      name: "Driversity Global",
+      name: "Driversity Global",  
     },
     {
       id: 6,
