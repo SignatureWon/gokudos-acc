@@ -73,8 +73,53 @@ const KanbanBoard = (props) => {
         });
         break;
     }
+
     // setData(newData);
   };
+  const boardTotal = {
+    group: {
+      0: {
+        budget: 8100,
+        actual: 0,
+      },
+      1: {
+        budget: 5750,
+        actual: 3600,
+      },
+    },
+    status: {
+      0: {
+        budget: 3500,
+        actual: 0,
+      },
+      1: {
+        budget: 4600,
+        actual: 0,
+      },
+      2: {
+        budget: 4550,
+        actual: 3600,
+      },
+      3: {
+        budget: 1200,
+        actual: 0,
+      },
+    },
+    member: {
+      0: {
+        budget: 7500,
+        actual: 0,
+      },
+      1: {
+        budget: 9950,
+        actual: 3600,
+      },
+      2: {
+        budget: 10250,
+        actual: 3600,
+      },
+    },
+  }
 
   return (
     <div className="p-3 bg-gray-50">
@@ -104,11 +149,11 @@ const KanbanBoard = (props) => {
                 </div>
                 <div className="grid grid-cols-2 border border-gray-200 shadow rounded">
                   <div className="p-2 bg-gray-50">
-                    <div className="text-sm">RM{index === 0 ? numberWithCommas(8100) : numberWithCommas(5750)}</div>
+                    <div className="text-sm">RM{numberWithCommas(boardTotal[props.displayBy][index].budget)}</div>
                     <div className="text-xs text-gray-500">Budget</div>
                   </div>
                   <div className={`p-2 border-l bg-green-50 text-green-600 border-green-500`}>
-                    <div className="text-sm">RM{index === 0 ? numberWithCommas(0) : numberWithCommas(3600)}</div>
+                    <div className="text-sm">RM{numberWithCommas(boardTotal[props.displayBy][index].actual)}</div>
                     <div className="text-xs text-gray-500">Actual</div>
                   </div>
                 </div>
